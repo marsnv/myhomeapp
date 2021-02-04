@@ -1,0 +1,14 @@
+{% extends 'hr/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ hr_staff.ViewStaff}}</h1>
+    <p>{{ hr_staff.Salary }}</p>
+    <a href="{% url 'hr_delete' hr_staff.id %}" class="btn btn-danger">Удалить</a>
+    <a href="{% url 'hr_update' hr_staff.id %}" class="btn btn-info">Редактировать</a>
+
+
+{% endblock %}

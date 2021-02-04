@@ -1,0 +1,19 @@
+{% extends 'hr/base.html' %}
+
+{% block title %}
+    Новый сотрудник
+{% endblock %}
+
+{% block content %}
+    <h1>Создать нового сотрудника</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.LastName }}<br>
+        {{ form.Name }}<br>
+        {{ form.MiddleName }}<br>
+        {{ form.BirthDate }}<br>
+        {{ form.Salary }}<br>
+        <button type="submit" class="btn btn-success">Сохранить</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

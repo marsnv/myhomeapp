@@ -1,0 +1,17 @@
+{% extends 'hr/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Сотрудники</h1>
+    {% for el in hr_staffs %}
+        <div class="alert alert-warning mt-2">
+{#            <h3>№ {{ el.id }}</h3>#}
+{#            <p>{{ el.LastName }} {{ el.Name }} {{ el.MiddleName }} | {{ el.BirthDate }} | {{ el.Salary }}</p>#}
+            <p>{{ el.ViewStaff }}</p>
+            <a href="{% url 'hr_detail' el.id %}" class="btn btn-warning">Открыть</a>
+        </div>
+    {% endfor %}
+{% endblock %}
